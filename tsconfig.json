@@ -21,7 +21,6 @@
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
     "paths": {
-      "@configuration": ["src/apps/api-gateway/src/configurations"],
       "@app/common": [
         "src/libs/common/src"
       ],
