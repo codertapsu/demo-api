@@ -1,0 +1,92 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "ApiGatewayController_ping",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/authentication/login": {
+      "post": {
+        "operationId": "AuthenticationController_logIn",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LogInDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "authentication"
+        ]
+      }
+    },
+    "/authentication/me": {
+      "get": {
+        "operationId": "AuthenticationController_getCurrentAuthUser",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "authentication"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "NestJS Demo",
+    "description": "",
+    "version": "1.0",
+    "contact": {
+      "name": "Khanh Hoang",
+      "url": "https://github.com/codertapsu",
+      "email": "hoangduykhanh21@gmail.com"
+    }
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "Jwt": {
+        "scheme": "bearer",
+        "bearerFormat": "Jwt",
+        "type": "http"
+      }
+    },
+    "schemas": {
+      "LogInDto": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "username",
+          "password"
+        ]
+      }
+    }
+  }
+}
